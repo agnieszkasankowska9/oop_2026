@@ -5,14 +5,14 @@ class Czlowiek:
     def __init__(self, imie, plec):
         self.imie = imie
         self.plec = plec
-        print(f"Niech powstanie czlowiek o imieniu {imie}")
+        print(f"Niech powstanie człowiek o imieniu {imie}.")
 
     def przedstaw_sie(self):
-        print(f"Dzien dobry, mam na imie {self.imie} i jestem ", end="")
+        print(f"Dzien dobry, mam na imię {self.imie} i jestem ", end="")
         if self.plec == "M":
-            print("mezczyzna")
+            print("mezczyzną.")
         else:
-            print("kobieta")
+            print("kobietą.")
 
     def przedstaw(self, osoba):
         print(f"Oto {osoba.imie}")
@@ -30,9 +30,9 @@ class Dziecko(Czlowiek):
     def przedstaw_sie(self):
         print(f"Czesc, jestem {self.imie} i jestem ", end="")
         if self.plec == "M":
-            print("chlopcem")
+            print("chłopcem.")
         else:
-            print("dziewczynka")
+            print("dziewczynką.")
 
 
 kain = Dziecko("Kain", "M")
