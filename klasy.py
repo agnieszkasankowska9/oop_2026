@@ -1,3 +1,5 @@
+import random
+
 class Czlowiek:
     gatunek = "Homo Sapiens"  #atrybut klasy
 
@@ -8,7 +10,8 @@ class Czlowiek:
         print(f"Niech powstanie człowiek o imieniu {imie}.")
 
     def __add__(self, other):
-        pass
+        if isinstance(other, Czlowiek) and self.plec != other.plec:
+            return Dziecko(None, random.choice("M, K"))
 
     def przedstaw_sie(self):
         print(f"Dzien dobry, mam na imię {self.imie} i jestem ", end="")
@@ -19,11 +22,6 @@ class Czlowiek:
 
     def przedstaw(self, osoba):
         print(f"Oto {osoba.imie}")
-
-adam = Czlowiek("Adam", "M")
-# adam.przedstaw_sie()
-ewa = Czlowiek("Ewa", "K")
-# ewa.przedstaw_sie()
 
 
 class Dziecko(Czlowiek):
@@ -47,8 +45,3 @@ class Dziecko(Czlowiek):
         else:
             print("dziewczynką.")
 
-
-kain = Dziecko("Kain", "M")
-# kain.baw_sie()
-# kain.przedstaw_sie()
-print(kain)
