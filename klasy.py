@@ -27,6 +27,10 @@ ewa = Czlowiek("Ewa", "K")
 
 
 class Dziecko(Czlowiek):
+    def __init__(self, imie, plec):
+        super().__init__(imie, plec)
+        print(f"Powstaje Dziecko o imieniu {imie}")
+
     def __str__(self):
         if self.plec=="M":
             return f"Chłopiec {self.imie}"
