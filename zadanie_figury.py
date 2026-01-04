@@ -26,22 +26,17 @@ class Prostokat(FiguraGeometryczna):
         self.b = b
 
     def policz_obwod(self):
-        return self.a *2 + self.b * 2
+        return f"Obwod: {self.a *2 + self.b * 2}"
 
     def policz_pole(self):
-        return self.a * self.b
+        return f"Pole: {self.a * self.b}"
 
 
 
-class Kwadrat(FiguraGeometryczna):
+class Kwadrat(Prostokat):
     def __init__(self, a):
-        self.a = a
+        super().__init__(a, a)
 
-    def policz_obwod(self):
-        return self.a * 4
-
-    def policz_pole(self):
-        return self.a **2
 
 
 class Kolo(FiguraGeometryczna):
@@ -49,10 +44,10 @@ class Kolo(FiguraGeometryczna):
         self.r = r
 
     def policz_pole(self): # pi * r **2
-        return pi * self.r **2
+        return f"Pole: {pi * self.r **2:.2f}"
 
     def policz_obwod(self): # 2 * pi * r
-        return 2 * pi * self.r
+        return f"Obwod: {2 * pi * self.r:.2f}"
 
 
 class Trojkat(FiguraGeometryczna):
@@ -63,22 +58,22 @@ class Trojkat(FiguraGeometryczna):
 
     def policz_pole(self):
         p = (self.a + self.b +self.c)/2
-        return (p*(p-self.a)*(p-self.b)*(p-self.c))**0.5
+        return f"Pole: {(p*(p-self.a)*(p-self.b)*(p-self.c))**0.5:.2f}"
 
     def policz_obwod(self):
-        return self.a + self.b + self.c
+        return f"Obwod: {self.a + self.b + self.c}"
 
 
 
 
 prostokat1 = Prostokat(5, 4)
-print(prostokat1.policz_pole())
+print(prostokat1.policz_pole(), prostokat1.policz_obwod())
 
 kwadrat1 = Kwadrat(10)
-print(kwadrat1.policz_pole())
+print(kwadrat1.policz_pole(), kwadrat1.policz_obwod())
 
 kolo1 = Kolo(5)
-print(kolo1.policz_obwod())
+print(kolo1.policz_pole(), kolo1.policz_obwod())
 
 trojkat1 = Trojkat(2, 3, 4)
-print(trojkat1.policz_pole())
+print(trojkat1.policz_pole(), trojkat1.policz_obwod())
