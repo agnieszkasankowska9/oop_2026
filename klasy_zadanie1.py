@@ -52,5 +52,6 @@ print("-"*10)
 print(piotr_raczek.pensja)
 piotr_raczek.pensja = 7500
 print(piotr_raczek.pensja)
+print("-"*10)
 
 
